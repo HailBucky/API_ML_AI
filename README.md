@@ -55,7 +55,8 @@
 
 - 百度语音识别api定价
 
-![语音识别定价]()
+![语音识别定价](https://github.com/HailBucky/API_ML_AI/blob/master/语音识别.png)
+
 - 图灵机器人定价
 ![图灵机器人定价](https://github.com/HailBucky/API_ML_AI/blob/master/api1.png)
 
