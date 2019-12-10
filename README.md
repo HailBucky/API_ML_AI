@@ -48,3 +48,13 @@
 
 ![原型首页](https://github.com/HailBucky/API_ML_AI/blob/master/原型1.png)
 
+# API产品使用
+## 产品定价
+- 百度语音合成api定价
+![语音合成定价](https://github.com/HailBucky/API_ML_AI/blob/master/api语音合成.png)
+- 百度语音识别api定价
+![语音识别定价]()
+- 图灵机器人定价
+![图灵机器人定价](https://github.com/HailBucky/API_ML_AI/blob/master/api1.png)
+
+## 使用比较分析
