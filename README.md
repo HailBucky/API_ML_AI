@@ -52,7 +52,9 @@
 ## 产品定价
 - 百度语音合成api定价
 ![语音合成定价](https://github.com/HailBucky/API_ML_AI/blob/master/api语音合成.png)
+
 - 百度语音识别api定价
+
 ![语音识别定价]()
 - 图灵机器人定价
 ![图灵机器人定价](https://github.com/HailBucky/API_ML_AI/blob/master/api1.png)
