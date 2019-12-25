@@ -88,3 +88,4 @@ client.asr(get_file_content('C:/Users/Hail Bucky/Desktop/xixi1.wav'), 'wav', 160
  'result': ['拟核辉王红帮我打给王你叫什么名字'],
  'sn': '683704804301577267368'}
 ```
+### 上述代码使用的是百度的语音识别API，录音文件是发音较标准的20秒录音，由结果可以看出识别结果不太准确，词不达意。
