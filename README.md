@@ -61,7 +61,7 @@
 ![图灵机器人定价](https://github.com/HailBucky/API_ML_AI/blob/master/api1.png)
 
 ## 使用比较分析
-、、、
+```
 from aip import AipSpeech
 
 """ 你的 APPID AK SK """
@@ -74,15 +74,16 @@ client = AipSpeech(APP_ID, API_KEY, SECRET_KEY)
 def get_file_content(filePath):
     with open(filePath, 'rb') as fp:
         return fp.read()
-、、、
-、、、
+
 # 识别本地文件
 client.asr(get_file_content('C:/Users/Hail Bucky/Desktop/xixi1.wav'), 'wav', 16000, {
     'dev_pid': 1536,
 })
-、、、
+```
 ### 输出结果：{'corpus_no': '6774311764074314323',
- 'err_msg': 'success.',
+```
+'err_msg': 'success.',
  'err_no': 0,
  'result': ['拟核辉王红帮我打给王你叫什么名字'],
  'sn': '683704804301577267368'}
+```
