@@ -46,7 +46,7 @@
 
 # 原型
 
-![原型首页](https://github.com/HailBucky/API_ML_AI/blob/master/原型1.png)
+![原型首页](https://github.com/HailBucky/API_ML_AI/blob/master/images/原型2.png)
 
 # API产品使用
 ## 产品定价
