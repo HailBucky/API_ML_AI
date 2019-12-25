@@ -61,8 +61,7 @@
 ![图灵机器人定价](https://github.com/HailBucky/API_ML_AI/blob/master/api1.png)
 
 ## 使用比较分析
-···
-from aip import AipSpeech
+···from aip import AipSpeech
 
 """ 你的 APPID AK SK """
 APP_ID = '18107635'
