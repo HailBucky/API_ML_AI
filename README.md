@@ -80,8 +80,9 @@ client.asr(get_file_content('C:/Users/Hail Bucky/Desktop/xixi1.wav'), 'wav', 160
     'dev_pid': 1536,
 })
 ```
-### 输出结果：{'corpus_no': '6774311764074314323',
+### 输出结果：
 ```
+{'corpus_no': '6774311764074314323',
 'err_msg': 'success.',
  'err_no': 0,
  'result': ['拟核辉王红帮我打给王你叫什么名字'],
