@@ -61,9 +61,11 @@
 
 ![语音识别定价](https://github.com/HailBucky/API_ML_AI/blob/master/语音识别.png)
 
+- 腾讯云语音识别api定价
+![腾讯云语音识别定价](https://github.com/HailBucky/API_ML_AI/blob/master/%E8%85%BE%E8%AE%AF%E4%BA%91%E5%AE%9A%E4%BB%B7.png)
 
 ## 使用比较分析
-- 百度-语音识别
+### 百度-语音识别
 ```
 from aip import AipSpeech
 
@@ -91,4 +93,84 @@ client.asr(get_file_content('C:/Users/Hail Bucky/Desktop/xixi1.wav'), 'wav', 160
  'result': ['拟核辉王红帮我打给王你叫什么名字'],
  'sn': '683704804301577267368'}
 ```
-- 上述代码使用的是百度的语音识别API，录音文件是发音较标准的20秒录音，由结果可以看出识别结果不太准确，词不达意。
+- 上述代码使用的是百度的语音识别API，录音文件是发音较标准的20秒录音，正确内容为“古代有一书生名为宁采臣”。由结果可以看出识别结果不太准确，词不达意。
+- 于是尝试短语音识别看是否可以提高识别准确性。
+```
+from aip import AipSpeech
+
+""" 你的 APPID AK SK """
+APP_ID = '18107635'
+API_KEY = 'VnRI6FgjHiCkEOAHxPcEq0UG'
+SECRET_KEY = 'rXLik8wvXLBcufMdSMcmevmxLtAzKUy3'
+
+client = AipSpeech(APP_ID, API_KEY, SECRET_KEY)
+
+def get_file_content(filePath):
+    with open(filePath, 'rb') as fp:
+        return fp.read()
+
+# 识别本地文件
+client.asr(get_file_content('C:/Users/Hail Bucky/Desktop/simple.wav'), 'wav', 16000, {
+    'dev_pid': 1536,
+})
+```
+### 输出结果：
+```
+{'corpus_no': '6779569877666691048',
+ 'err_msg': 'success.',
+ 'err_no': 0,
+ 'result': ['嗯嗯你好'],
+ 'sn': '963224966541578491618'}
+ ```
+ - 语音内容为“你好”
+ - 尝试了短语音后发现准确率高了很多，于是在语音识别和唤醒词的设置上应该尽可能短且清晰。
+ 
+ ### 百度-语音合成
+ ```
+ from aip import AipSpeech
+
+""" 你的 APPID AK SK """
+APP_ID = '18107635'
+API_KEY = 'VnRI6FgjHiCkEOAHxPcEq0UG'
+SECRET_KEY = 'rXLik8wvXLBcufMdSMcmevmxLtAzKUy3'
+
+client = AipSpeech(APP_ID, API_KEY, SECRET_KEY)
+
+result  = client.synthesis('你好百度', 'zh', 1, {
+    'vol': 5,
+})
+
+# 识别正确返回语音二进制 错误则返回dict 参照下面错误码
+if not isinstance(result, dict):
+    with open('auido.mp3', 'wb') as f:
+        f.write(result)
+        
+```
+- [语音合成文件查看](https://github.com/HailBucky/API_ML_AI/blob/master/auido.mp3)
+- 语音发音清晰，语速正常，认为可以正常的进行使用，也没有报错现象发生。
+
+### 腾讯云语音识别
+![腾讯云语音合成](https://github.com/HailBucky/API_ML_AI/blob/master/%E8%85%BE%E8%AE%AF%E4%BA%91%E8%AF%AD%E9%9F%B3%E8%AF%86%E5%88%AB.png)
+- 腾讯云的语音识别并非使用代码，而是直接上传音频样本。
+
+- 长语音识别
+### 输出结果：
+```
+[0:0.470,0:4.475,1]  古代有一书生名为宁采臣。
+[0:4.475,0:7.005,1]  浙江人品行端正。
+[0:7.005,0:10.875,1]  一次他去京华应天色已晚。
+[0:10.875,0:14.280,1]  他来到一庙里想要借宿及网。
+[0:14.280,0:16.900,1]  这时庙里出来一和尚。
+[0:17.010,0:19.550,1]  宁采臣港忙全全。
+[0:19.550,0:20.210,0]  
+```
+- 短语音识别
+```
+[0:1.040,0:1.940,0]  你好。
+```
+- 从结果上来看，腾讯云的准确性高了很多非常多，基本的内容都可以进行识别。
+## API使用
+- 语音识别<br>
+在api的选择上，语音识别中腾讯云的语音识别准确率更高，无论是复杂一点的长语音还是简短的短语音都要更为准确。百度的识别长语音基本无法进行识别，短语音也有较大的误差。<br>
+- 语音合成<br>
+百度的语音合成很清晰。
