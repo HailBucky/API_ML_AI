@@ -66,6 +66,8 @@
 
 ## 使用比较分析
 ### 百度-语音识别
+
+- [百度-短语音识别文档](https://ai.baidu.com/tech/speech/asr)
 ```
 from aip import AipSpeech
 
@@ -126,6 +128,7 @@ client.asr(get_file_content('C:/Users/Hail Bucky/Desktop/simple.wav'), 'wav', 16
  - 尝试了短语音后发现准确率高了很多，于是在语音识别和唤醒词的设置上应该尽可能短且清晰。
  
  ### 百度-语音合成
+- [百度-在线语音合成](https://ai.baidu.com/ai-doc/SPEECH/fk38y8hqo)
  ```
  from aip import AipSpeech
 
@@ -150,7 +153,7 @@ if not isinstance(result, dict):
 - 语音发音清晰，语速正常，认为可以正常的进行使用，也没有报错现象发生。
 
 ### 腾讯云语音识别
-- [腾讯云网站](https://cloud.tencent.com/)
+- [腾讯云网站](https://cloud.tencent.com/)<br>
 ![腾讯云语音合成](https://github.com/HailBucky/API_ML_AI/blob/master/%E8%85%BE%E8%AE%AF%E4%BA%91%E8%AF%AD%E9%9F%B3%E8%AF%86%E5%88%AB.png)
 - 腾讯云的语音识别并非使用代码，而是直接上传音频样本。
 
